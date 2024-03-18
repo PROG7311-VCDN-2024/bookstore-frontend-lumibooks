@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<!-- Add checkout form and fields -->
+<form asp-controller="Cart" asp-action="ProcessCheckout" method="post">
+    <!-- Add fields for user information, payment method, etc. -->
+    <button type="submit" class="btn btn-primary">Place Order</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@model Order
+
+<h1>Order Details</h1>
+
+@if (Model != null)
+{
+    <div>
+        <!-- Display order details here -->
+        <p>Order ID: @Model.Id</p>
+        <!-- Display other order details as needed -->
+    </div>
+}
+else
+{
+    <div>
+        <p>No orders yet.</p>
+    </div>
+}
+
+<div>
+    <a class="btn btn-success" href="@Url.Action("PlaceOrder", "Order")">Place Order</a>
+</div>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to LumiBooks!</h1>
+    <p class="lead">Explore our vast collection of books and find your next great read.</p>
+    <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Books")" role="button">Browse Books</a>
+    <a class="btn btn-success btn-lg" href="@Url.Action("Index", "Cart")" role="button">View Cart</a>
+    <a class="btn btn-info btn-lg" href="@Url.Action("Index", "Order")" role="button">View Orders</a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>About Us</h2>
+        <p>Discover who we are and what sets us apart.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Our Mission</h2>
+        <p>Learn about our mission to provide quality books and exceptional service.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for any inquiries or assistance.</p>
+    </div>
+</div>

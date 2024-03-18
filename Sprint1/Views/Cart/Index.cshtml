@@ -1,0 +1,47 @@
+﻿@model Sprint1.Models.Cart
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2>Cart</h2>
+
+@if (Model != null && Model.CartItems != null && Model.CartItems.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var books = ViewBag.Books as List<Book>;
+            }
+            @foreach (var cartItem in Model.CartItems)
+            {
+                var book = books.FirstOrDefault(b => b.Id == cartItem.BookId); // Fetch the book associated with the cart item
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Price</td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Your cart is empty.</p>
+}
+
+<div>
+    <a class="btn btn-primary" href="@Url.Action("Index", "Books")">Browse Books</a>
+    <a class="btn btn-success" href="@Url.Action("ProcessCheckout", "Cart")">Proceed to Checkout</a>
+</div>
